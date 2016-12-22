@@ -1,3 +1,5 @@
 theme: jekyll-theme-minimal
-defaults:
-    title: Canarium Documentation
+title                    : "Canarium Documenation"
+title_separator          : "-"
+name                     : "Canarium Documenation"
+description              : "Getting Started with Canarium Development"
