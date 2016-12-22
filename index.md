@@ -2,7 +2,7 @@
 title: Canarium Documentation
 ---
 
-## Canarium Platform
+## Canarium Platforms
 
 Canarium is a platform to create web applications with ease. The platform is based on Zend Framework 2 and uses other great open source modules and libraries at its core.
 
