@@ -65,14 +65,14 @@ Enter the `<destination_dir>`
 
 copy the following files from data/config/autoload to config/autoload and remove the `.dist` extension. Customize the values depending on your local setup and preference. Take note that configurations marked as `*.local.php` are igonored in git.
 
-**canariumcore.local.php.dist** - Site configuration
-**doctrine.local.php.dist** - database configuration
-**goaliomailservice.local.php.dist** - email configuration (required if you want email sending capability)
-**googlesso.local.php.dist** - google login configuration (required if you want google login capability)
-**ocra-service-manager.local.php.dist** - enable/disable dependency view in Zend Developer Tools (optional)
-**phpini.local.php.dist** - php.ini configuration override (optional)
-**recaptcha.local.php.dist** - integrate recaptcha in contact us module (required if you want recaptcha in your contact form)
-**zenddevelopertools.local.php.dist** - Enables zend developer tools for debugging (optional)
+- **canariumcore.local.php.dist** - Site configuration
+- **doctrine.local.php.dist** - database configuration
+- **goaliomailservice.local.php.dist** - email configuration (required if you want email sending capability)
+- **googlesso.local.php.dist** - google login configuration (required if you want google login capability)
+- **ocra-service-manager.local.php.dist** - enable/disable dependency view in Zend Developer Tools (optional)
+- **phpini.local.php.dist** - php.ini configuration override (optional)
+- **recaptcha.local.php.dist** - integrate recaptcha in contact us module (required if you want recaptcha in your contact form)
+- **zenddevelopertools.local.php.dist** - Enables zend developer tools for debugging (optional)
 
 For more information about the configuration values, see the core modules' documentation in their github pages.
 
@@ -97,6 +97,14 @@ Give the following directories write permission:
 
 
 Setup your domain's doc root to your `<destination_dir>/public/` directory and the site should now be running.
+
+To access the administration page, visit the /admin route and login with the following default admin user
+
+`username: root`
+`email: root@root.com`
+`password: 123456`
+
+Be sure to change your admin password afterwards.
 
 ### Directory Structure
 
