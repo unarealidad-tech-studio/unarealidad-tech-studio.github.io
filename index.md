@@ -1,4 +1,7 @@
-## Canarium Platform
+* TOC
+{:toc}
+
+# Canarium Platform
 
 Canarium is a platform to create web applications with ease. The platform is based on Zend Framework 2 and uses other great open source modules and libraries at its core.
 
@@ -12,40 +15,46 @@ Before working on a Canarium Project, it is best that you have a good idea about
 
 The rest of the document will discuss only the process specific to Canarium. It is best to familiarize yourself with the above concepts and third party applications before creating your own canarium application.
 
-### Definition of Terms
+# Definition of Terms
 
-#### Canarium Kernal
+## Canarium Kernal
 This contains the base of canarium which is composed of libraries and modules to allow the platform to work.
 
-#### Modules
+## Modules
 The blocks that extends the functionality of the Canarium Kernal. This includes complete routes, templates, permissions, and configuration (e.g. Pages, Contant Us)
 
-#### Libraries
+## Libraries
 Libraries helps modules to do their work. The code does not have template files and only exposes routes, services and models for canarium modules to use. (e.g. ErrorHandler, GoogleSSO)
 
-#### Plugins
+## Plugins
 Plugins are like libraries but does not rely on Canarium Kernal. (e.g. Country List, Postcode lookup etc.)
 
-#### AppMaster
+## AppMaster
 - The AppMaster level should include all the core operating procedures from Canarium Kernal, and customise it on this level.
 - All 3rd party libraries should be included from Canarium Kernal too.
-- Libraries
+
+### Libraries
  - The libraries found here are more specific to this particular application. Most likely it is custom built libraries with a specific business function. This means it’s not shared with all applications, but it is required for all Instances of this Application.
-- Modules
+ 
+### Modules
   - The Modules found here include the basic operational procedures from Canarium Kernal to get an Application running. But it will have a wider selection of modules that are purposely built for this Application (e.g. Custom Calculator, Image Gallery)
-- Plugins
+  
+### Plugins
  - If there is a reason to put a plugin on the App level it is because it’s not general enough for other Apps to share its use.
 
-#### AppInstance
+## AppInstance
 - If there is an override on the AppInstance level it is because the owner of this instance wants something that works slightly differently. An example may be a different tax structure for pricing of products. Or it could be a different region that requires different shipping methods. In many cases, new instancecs would just need to vary in configurations and not need to worry about the code.
-- Libraries
- - There should be no libraries stored at this level, but we will make a provision for there to be if the case arises.
-- Modules
+
+### Libraries
+- There should be no libraries stored at this level, but we will make a provision for there to be if the case arises.
+
+### Modules
  - Most likely there are no overrides on the AppInstance level, but if there needs to be we have made provisions for this. 
-- Plugins
+
+### Plugins
  - Primarily inherited from the Kernal or AppMaster. If there is a reason to put a plugin on the AppInstance level it is because it’s not general enough for other AppInstances to share its use.
 
-### Creating a site
+# Creating a site
 
 Instantiate the Appmaster skeleton
 
@@ -82,7 +91,7 @@ Create an empty database and put the name of that database in your doctrine.loca
 
 Enter the `<destination_dir>` and initialize database using the doctrine tool
 
-`./doctrine- orm:schema-tool:update --force`
+`./doctrine-module orm:schema-tool:update --force`
 
 Import data/data_imports/initdb.sql to your database to insert some required data
 
@@ -106,9 +115,9 @@ To access the administration page, visit the /admin route and login with the fol
 
 Be sure to change your admin password afterwards.
 
-### Directory Structure
+# Directory Structure
 
-#### Appmaster Structure
+## Appmaster Structure
 
 Directory/File | Description
 ------------- | -------------
@@ -123,7 +132,7 @@ compose.lock | Composer lock file
 init_autoloader.php | Composer autoload file
 instances | (dir) This contains the AppInstance clones. See AppInstance Structure for more details.
 
-#### Appinstance Structure
+## Appinstance Structure
 
 Directory/File | Description
 -------------- | --------------
@@ -144,3 +153,9 @@ css | (dir) AppInstance css files
 images | (dir) AppInstance images files
 js | (dir) AppInstance js files
 templates | (dir) Module template overrides.
+
+# Common Problems Encountered
+
+Error | Solution
+----- | -----
+_Exception: Failed to create upload folders_ | You must add apache write permission to the directory. A lot of operations requires that canarium can create the files. Apache’s user account is sometimes www-data.
