@@ -1,4 +1,4 @@
-theme: jekyll-theme-minimal
+theme: minimal-mistakes-jekyll
 title                    : "Canarium Documenation"
 title_separator          : "-"
 name                     : "Canarium Documenation"
