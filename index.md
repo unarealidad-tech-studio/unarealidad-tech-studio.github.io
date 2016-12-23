@@ -31,7 +31,7 @@ composer create-project unarealidad/canarium-appmaster-skeleton <destination_dir
 
 2. Enter the <destination_dir> and go to the instances directory
 
-cd <destination_dir>/instances
+`cd <destination_dir>/instances`
 
 3. Instantiate the Appinstance skeleton
 
